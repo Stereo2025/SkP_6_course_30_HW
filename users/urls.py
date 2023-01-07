@@ -9,6 +9,6 @@ urlpatterns = [
     path('user/create/', views.UserCreateView.as_view()),
     path('user/<int:pk>/update/', views.UserUpdateView.as_view()),
     path('user/<int:pk>/delete/', views.UserDeleteView.as_view()),
-    path('token/', TokenObtainPairView.as_view()),
+    path('user/token/', TokenObtainPairView.as_view()),
     path('token/refresh/', TokenRefreshView.as_view()),
 ]
