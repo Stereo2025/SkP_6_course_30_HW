@@ -71,15 +71,15 @@ class AdUpdateSerializer(serializers.ModelSerializer):
         model = Ad
         fields = "__all__"
 
-    def is_valid(self, raise_exception=False):
-        self._category_id = self.initial_data.pop('category_id', [])
-        return super().is_valid(raise_exception=raise_exception)
-
-    def save(self):
-        ad = super().save()
-        ad.category = get_object_or_404(Category, pk=self._category_id)
-        ad.save()
-        return ad
+    # def is_valid(self, raise_exception=False):
+    #     self._category_id = self.initial_data.pop('category_id', [])
+    #     return super().is_valid(raise_exception=raise_exception)
+    #
+    # def save(self):
+    #     ad = super().save()
+    #     ad.category = get_object_or_404(Category, pk=self._category_id)
+    #     ad.save()
+    #     return ad
 
 
 class AdImageSerializer(serializers.ModelSerializer):
